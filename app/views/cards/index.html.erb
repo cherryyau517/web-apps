@@ -1,0 +1,29 @@
+<h1> Let's play poker! </h1>
+
+<%
+numbers= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "ace","jack", "queen", "king"]
+suits= ["clubs","diamonds", "hearts", "spades"]
+
+
+deck = []
+
+for suit in suits
+ for number in numbers
+    card = "#{number}_of_#{suit}"
+    deck.push(card)
+ end 
+end 
+
+shuffled_deck = deck.shuffle
+hand = shuffled_deck [0,5]
+
+%>
+
+<% for card in hand%> 
+<img src="/images/cards/<%= card %>.svg">
+<% end %>
+
+
+<p>
+<a href="/cards"> Draw the cards again! </a>
+</p>
